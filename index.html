@@ -788,6 +788,110 @@
             color: var(--link-color);
         }
 
+        #tech-stack {
+            padding: 80px 40px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+        }
+
+        .ts-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        #tech-stack h2.ts-title {
+            font-family: 'Oswald', 'Arial Narrow', sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-size: 36px;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+
+        .ts-narrative {
+            font-size: 19px;
+            line-height: 1.6;
+            margin: 0 0 24px 0;
+            color: var(--text-color);
+        }
+
+        #tech-stack h3.ts-section-divider {
+            font-family: 'Oswald', 'Arial Narrow', sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-size: 28px;
+            margin: 50px 0 24px 0;
+            padding-left: 14px;
+            display: inline-block;
+            position: relative;
+        }
+
+        #tech-stack h3.ts-section-divider:first-of-type {
+            margin-top: 30px;
+        }
+
+        #tech-stack h3.ts-section-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            transform: translateY(-50%);
+            height: 2px;
+            width: clamp(20px, calc(50vw - 520px), 120px);
+            background-color: var(--text-color);
+        }
+
+        .ts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .ts-item {
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 18px 20px;
+            background-color: #ffffff;
+            transition: background-color 0.15s ease, border-color 0.15s ease;
+        }
+
+        .ts-item:hover {
+            background-color: var(--bg-alt);
+            border-color: var(--text-color);
+        }
+
+        .ts-item-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .ts-item-logo {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .ts-item-name {
+            font-family: 'Oswald', 'Arial Narrow', sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            font-size: 18px;
+            color: var(--link-color);
+        }
+
+        .ts-item-desc {
+            font-size: 15px;
+            line-height: 1.5;
+            color: var(--text-color);
+        }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -1133,6 +1237,7 @@
         #about,
         #blog,
         #open-source,
+        #tech-stack,
         #hobbies {
             position: relative;
         }
@@ -1141,6 +1246,7 @@
         #about::before,
         #blog::before,
         #open-source::before,
+        #tech-stack::before,
         #hobbies::before {
             content: '';
             position: absolute;
@@ -1498,6 +1604,44 @@
                 font-size: 15px;
             }
 
+            /* ----- Tech stack ----- */
+            #tech-stack {
+                padding: 60px 20px;
+            }
+
+            #tech-stack h2.ts-title {
+                font-size: 28px;
+                margin-bottom: 16px;
+            }
+
+            .ts-narrative {
+                font-size: 17px;
+            }
+
+            #tech-stack h3.ts-section-divider {
+                font-size: 22px;
+                padding-left: 0;
+                margin: 40px 0 20px 0;
+                display: block;
+            }
+
+            #tech-stack h3.ts-section-divider::before {
+                display: none;
+            }
+
+            .ts-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .ts-item-name {
+                font-size: 16px;
+            }
+
+            .ts-item-desc {
+                font-size: 14px;
+            }
+
             /* ----- Hobbies ----- */
             #hobbies {
                 padding: 40px 20px 80px;
@@ -1525,6 +1669,7 @@
             #about::before,
             #blog::before,
             #open-source::before,
+            #tech-stack::before,
             #hobbies::before {
                 display: none;
             }
@@ -1550,6 +1695,7 @@
             <a href="#experience" id="nav-experience">Experience &amp; Education</a>
             <a href="#blog" id="nav-blog">Blog</a>
             <a href="#open-source" id="nav-open-source">Open-Source Contributions</a>
+            <a href="#tech-stack" id="nav-tech-stack">My Tech Stack</a>
             <a href="#hobbies" id="nav-hobbies">Hobbies</a>
         </div>
         <div class="header-socials">
@@ -1592,6 +1738,7 @@
                             <li><a href="#experience">Experience &amp; Education</a></li>
                             <li><a href="#blog">Blog</a></li>
                             <li><a href="#open-source">Open-Source Contributions</a></li>
+                            <li><a href="#tech-stack">My Tech Stack</a></li>
                             <li><a href="#hobbies">Hobbies</a></li>
                         </ul>
                     </div>
@@ -2251,6 +2398,218 @@
             </div>
         </section>
 
+        <section id="tech-stack">
+            <div class="ts-container">
+                <h2 class="ts-title">My tech stack</h2>
+
+                <p class="ts-narrative">these are the tools and technologies i reach for when building, debugging,
+                    and exploring</p>
+
+                <h3 class="ts-section-divider">Languages</h3>
+                <div class="ts-grid">
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.simpleicons.org/python" alt="" aria-hidden="true">
+                            <div class="ts-item-name">Python</div>
+                        </div>
+                        <div class="ts-item-desc">my daily driver for ml infra, scripting, and most of my sglang work
+                        </div>
+                    </div>
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.simpleicons.org/cplusplus" alt=""
+                                aria-hidden="true">
+                            <div class="ts-item-name">C++</div>
+                        </div>
+                        <div class="ts-item-desc">for low-level work</div>
+                    </div>
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.simpleicons.org/nvidia" alt="" aria-hidden="true">
+                            <div class="ts-item-name">CUDA</div>
+                        </div>
+                        <div class="ts-item-desc">writing custom kernels for nvidia gpus, mostly around moe and lora
+                        </div>
+                    </div>
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.openai.com/triton/assets/triton-logo.png" alt=""
+                                aria-hidden="true">
+                            <div class="ts-item-name">Triton</div>
+                        </div>
+                        <div class="ts-item-desc">use it to write kernels for both AMD and NVIDIA gpus</div>
+                    </div>
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.simpleicons.org/apple" alt="" aria-hidden="true">
+                            <div class="ts-item-name">Metal (MSL)</div>
+                        </div>
+                        <div class="ts-item-desc">writing kernels for apple silicon as part of the sglang port</div>
+                    </div>
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.simpleicons.org/ocaml" alt="" aria-hidden="true">
+                            <div class="ts-item-name">OCaml</div>
+                        </div>
+                        <div class="ts-item-desc">picked it up at cornell</div>
+                    </div>
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.simpleicons.org/openjdk" alt=""
+                                aria-hidden="true">
+                            <div class="ts-item-name">Java</div>
+                        </div>
+                        <div class="ts-item-desc">my first programming language</div>
+                    </div>
+                </div>
+
+                <h3 class="ts-section-divider">ML &amp; Inference</h3>
+                <div class="ts-grid">
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo"
+                                src="https://raw.githubusercontent.com/sgl-project/sglang/main/assets/logo.svg" alt=""
+                                aria-hidden="true">
+                            <div class="ts-item-name">SGLang</div>
+                        </div>
+                        <div class="ts-item-desc">the inference engine i contribute to most actively</div>
+                    </div>
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.simpleicons.org/pytorch" alt=""
+                                aria-hidden="true">
+                            <div class="ts-item-name">PyTorch</div>
+                        </div>
+                        <div class="ts-item-desc">model definitions, custom ops, and most experimentation</div>
+                    </div>
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.simpleicons.org/vllm" alt="" aria-hidden="true">
+                            <div class="ts-item-name">vLLM</div>
+                        </div>
+                        <div class="ts-item-desc">reference point when i'm thinking about scheduler and kv-cache
+                            design</div>
+                    </div>
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.simpleicons.org/huggingface" alt=""
+                                aria-hidden="true">
+                            <div class="ts-item-name">Hugging Face</div>
+                        </div>
+                        <div class="ts-item-desc">model weights, tokenizers, and quick benchmarking</div>
+                    </div>
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.simpleicons.org/onnx" alt="" aria-hidden="true">
+                            <div class="ts-item-name">ONNX</div>
+                        </div>
+                        <div class="ts-item-desc">portable model format for moving across runtimes and hardware</div>
+                    </div>
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.simpleicons.org/onnx" alt="" aria-hidden="true">
+                            <div class="ts-item-name">ONNX Runtime</div>
+                        </div>
+                        <div class="ts-item-desc">running onnx models with hardware-specific execution providers</div>
+                    </div>
+                </div>
+
+                <h3 class="ts-section-divider">Tools</h3>
+                <div class="ts-grid">
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.simpleicons.org/apple" alt="" aria-hidden="true">
+                            <div class="ts-item-name">MacBook Pro M1</div>
+                        </div>
+                        <div class="ts-item-desc">my daily machine for development</div>
+                    </div>
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.simpleicons.org/git" alt="" aria-hidden="true">
+                            <div class="ts-item-name">git</div>
+                        </div>
+                        <div class="ts-item-desc">all of my open-source work flows through it</div>
+                    </div>
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.simpleicons.org/tmux" alt="" aria-hidden="true">
+                            <div class="ts-item-name">tmux</div>
+                        </div>
+                        <div class="ts-item-desc">how i keep long-running training and bench jobs alive</div>
+                    </div>
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.simpleicons.org/anthropic" alt=""
+                                aria-hidden="true">
+                            <div class="ts-item-name">Claude Code / Cursor / Antigravity</div>
+                        </div>
+                        <div class="ts-item-desc">i switch between them depending on the most recent updates</div>
+                    </div>
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.simpleicons.org/docker" alt=""
+                                aria-hidden="true">
+                            <div class="ts-item-name">Docker</div>
+                        </div>
+                        <div class="ts-item-desc">reproducing inference environments across machines</div>
+                    </div>
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.simpleicons.org/llvm" alt="" aria-hidden="true">
+                            <div class="ts-item-name">LLVM</div>
+                        </div>
+                        <div class="ts-item-desc">wrote a few compiler passes</div>
+                    </div>
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://mlir.llvm.org/mlir-logo.png" alt=""
+                                aria-hidden="true">
+                            <div class="ts-item-name">MLIR</div>
+                        </div>
+                        <div class="ts-item-desc">wrote a few compiler passes</div>
+                    </div>
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.simpleicons.org/linux" alt="" aria-hidden="true">
+                            <div class="ts-item-name">Linux</div>
+                        </div>
+                        <div class="ts-item-desc">everyone uses linux</div>
+                    </div>
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.simpleicons.org/gnubash" alt=""
+                                aria-hidden="true">
+                            <div class="ts-item-name">Bash</div>
+                        </div>
+                        <div class="ts-item-desc">necessary to do work on my mac</div>
+                    </div>
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.simpleicons.org/langchain" alt=""
+                                aria-hidden="true">
+                            <div class="ts-item-name">LangChain</div>
+                        </div>
+                        <div class="ts-item-desc">used it to build an agent to help me contribute to sglang</div>
+                    </div>
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.simpleicons.org/postgresql" alt=""
+                                aria-hidden="true">
+                            <div class="ts-item-name">PostgreSQL</div>
+                        </div>
+                        <div class="ts-item-desc">my default for relational storage</div>
+                    </div>
+                    <div class="ts-item">
+                        <div class="ts-item-header">
+                            <img class="ts-item-logo" src="https://cdn.simpleicons.org/minio" alt="" aria-hidden="true">
+                            <div class="ts-item-name">MinIO</div>
+                        </div>
+                        <div class="ts-item-desc">my default object store</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="hobbies">
             <div class="hobbies-container">
                 <p class="hobbies-narrative">i'm a software engineer because i want to make the world a better place
@@ -2314,6 +2673,7 @@
                 { id: 'experience', navIds: ['nav-experience'] },
                 { id: 'blog', navIds: ['nav-blog'] },
                 { id: 'open-source', navIds: ['nav-open-source'] },
+                { id: 'tech-stack', navIds: ['nav-tech-stack'] },
                 { id: 'hobbies', navIds: ['nav-hobbies'] }
             ];
 
